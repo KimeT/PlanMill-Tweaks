@@ -52,12 +52,12 @@ function addDimButton() {
 	$btn.append($span);
 	$span = $('<span class="ui-button-text"></span>');
 	switch (headerText) {
-		case 'requests':
-			$span.text(btnTexts.en);
-			break;
 		case 'palvelupyynnöt':
-		default:
 			$span.text(btnTexts.fi);
+			break;
+		case 'requests':
+		default:
+			$span.text(btnTexts.en);
 	}
 	$btn.append($span);
 
