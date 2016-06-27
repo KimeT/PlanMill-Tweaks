@@ -5,7 +5,7 @@
 // @downloadURL  https://github.com/KimeT/PlanMill-Tweaks/raw/master/planmill_request_tweak.user.js
 // @icon         https://online.planmill.com/pmtrial/generic/login/favicon.ico
 // @match        https://online.planmill.com/*/index.jsp?category=Sales%20management.Requests
-// @version      0.0.3
+// @version      0.0.4
 // @author       KimeT
 // @homepage     https://github.com/KimeT/PlanMill-Tweaks
 // @grant        none
