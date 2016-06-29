@@ -5,7 +5,7 @@
 // @downloadURL  https://github.com/KimeT/PlanMill-Tweaks/raw/master/planmill_request_tweak.user.js
 // @icon         https://online.planmill.com/pmtrial/generic/login/favicon.ico
 // @match        https://online.planmill.com/*/index.jsp?category=Sales%20management.Requests
-// @version      0.0.4
+// @version      0.0.5
 // @author       KimeT
 // @homepage     https://github.com/KimeT/PlanMill-Tweaks
 // @grant        none
@@ -27,7 +27,7 @@ function setDimNonAccountRows() {
 	});
 
 	// Set opacity to rows, where Account column is empty
-	if (yIndex !== undefined) {
+	if (yIndex != undefined) {
 		$('#data table tr').each(function () {
 			if ($(this).children('td:nth(' + yIndex + ')').text() === '') {
 				$(this).closest('tr').css('opacity', opacity);
@@ -36,9 +36,20 @@ function setDimNonAccountRows() {
 	}
 }
 
+// GET DIM BUTTON STATUS FROM LOCALSTORAGE
+function getDimButtonStatus() {
+	return localStorage.getItem('dimButtonStatus') === 'true' ? true : false;
+}
+
+// SET DIM BUTTON STATUS TO LOCALSTORAGE
+function setDimButtonStatus(value) {
+	localStorage.setItem('dimButtonStatus', value === true ? true : false);
+}
+
 // TOGGLE DIM BUTTON STATE
 function toggleDimButtonState() {
 	$('#tools-dim-nonaccount-rows').toggleClass('ui-state-active');
+	setDimButtonStatus($('#tools-dim-nonaccount-rows').hasClass('ui-state-active'));
 	setDimNonAccountRows();
 }
 
@@ -61,6 +72,8 @@ function addDimButton() {
 	}
 	$btn.append($span);
 
+	if (getDimButtonStatus()) { $btn.addClass('ui-state-active'); }
+
 	$btn.click(toggleDimButtonState);
 	$btn.hover(
 		function () {
@@ -75,5 +88,8 @@ function addDimButton() {
 }
 
 // ACTIONS
-addDimButton();
-$(document).ajaxComplete(setDimNonAccountRows);
+$(function () {
+	addDimButton();
+	setDimNonAccountRows();
+	$(document).ajaxComplete(setDimNonAccountRows);
+});
