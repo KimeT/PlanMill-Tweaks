@@ -7,7 +7,7 @@ Customizations to PlanMill UI
 
 *Permalink to newest version: [planmill_request_tweak.user.js](https://github.com/KimeT/PlanMill-Tweaks/raw/master/planmill_request_tweak.user.js)*
 
-This Greasemonkey script adds a button to toggle dimming of request rows without accounts in [PlanMill Requests view](https://online.planmill.com/javerdel/index.jsp?category=Sales%20management.Requests):  
+This Greasemonkey script adds a button to toggle dimming of request rows without accounts in [PlanMill Requests view](https://online.planmill.com/pmtrial/index.jsp?category=Sales%20management.Requests) (example url, needs trial account to log in):  
 [![PlanMill request dim button](images/PlanMill_request_dim_button.png)](https://raw.githubusercontent.com/KimeT/PlanMill-Tweaks/master/images/PlanMill_request_dim_button.png)
 
 ## Installation
@@ -18,4 +18,4 @@ This Greasemonkey script adds a button to toggle dimming of request rows without
 
 Install user script by clicking this link with Firefox / Chrome / Opera:
 
-- DNA TV EPG user script: [planmill_request_tweak.user.js](https://github.com/KimeT/PlanMill-Tweaks/raw/master/planmill_request_tweak.user.js)
+- PlanMill Tweaks user script: [planmill_request_tweak.user.js](https://github.com/KimeT/PlanMill-Tweaks/raw/master/planmill_request_tweak.user.js)
